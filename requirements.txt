@@ -1,0 +1,5 @@
+# Training dependencies for this project (using local ultralytics source)
+# Install with: pip install -r requirements.txt
+
+-e .
+
