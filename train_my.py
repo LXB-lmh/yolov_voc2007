@@ -17,7 +17,7 @@ def main() -> None:
         optimizer="SGD",       # usually better final accuracy for detection
         cos_lr=True,
         close_mosaic=10,
-        patience=50,
+        patience=20,
         save=True,
         save_period=10,
         pretrained=True,
