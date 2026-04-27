@@ -14,7 +14,7 @@ from ultralytics import YOLO
 ROOT_DIR = Path(__file__).resolve().parents[1]
 UPLOAD_DIR = ROOT_DIR / "backend" / "uploads"
 OUTPUT_DIR = ROOT_DIR / "backend" / "outputs"
-MODEL_PATH = Path(os.getenv("MODEL_PATH", str(ROOT_DIR / "runs" / "detect" / "train-6" / "weights" / "best.pt")))
+MODEL_PATH = Path(os.getenv("MODEL_PATH", str(ROOT_DIR /"weights" / "best.pt")))
 
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

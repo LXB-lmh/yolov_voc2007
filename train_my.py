@@ -6,7 +6,7 @@ def main() -> None:
     # 4090 24G + ~10k dataset high-performance training baseline
     model = YOLO("weights/yolov8l.pt")
     model.train(
-        data="VOCdevkit/YOLO_Dataset/dataset.yaml",      # TODO: replace with your dataset yaml path
+        data="../VOCdevkit/YOLO_Dataset/dataset.yaml",      # TODO: replace with your dataset yaml path
         device=0,              # single GPU (4090)
         workers=12,            # tune in [8, 16] based on CPU cores
         imgsz=640,
