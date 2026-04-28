@@ -51,7 +51,7 @@ IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff", ".webp"}
 
 
 def clear_hidden_files(path):
-    """删除目录下以 ._ 开头的隐藏文件（常见于 macOS 拷贝产生的垃圾文件）。"""
+    """删除目录下以 ._ 开头的隐藏文件（常见于 macOS 拷贝产生的垃圾文件）。."""
     if not os.path.isdir(path):
         return
     dir_list = os.listdir(path)
@@ -62,7 +62,7 @@ def clear_hidden_files(path):
 
 
 def _voc_xml_to_yolo_lines(xml_path, skip_difficult=True):
-    """读取单个 VOC xml，返回 YOLO 格式的标注行列表。"""
+    """读取单个 VOC xml，返回 YOLO 格式的标注行列表。."""
     tree = ET.parse(xml_path)
     root = tree.getroot()
     size = root.find("size")
@@ -110,7 +110,7 @@ def _voc_xml_to_yolo_lines(xml_path, skip_difficult=True):
 
 
 def _collect_samples():
-    """返回 [(不含后缀的文件名, 图片绝对路径), ...]，要求同名的 xml 存在。"""
+    """返回 [(不含后缀的文件名, 图片绝对路径), ...]，要求同名的 xml 存在。."""
     img_dir = os.path.join(VOC_ROOT, "JPEGImages")
     ann_dir = os.path.join(VOC_ROOT, "Annotations")
     if not os.path.isdir(img_dir):
@@ -135,7 +135,7 @@ def _collect_samples():
 
 
 def _split_list(items):
-    """按 TRAIN_RATIO / VAL_RATIO / TEST_RATIO 划分（整数切分，余数进测试集）。"""
+    """按 TRAIN_RATIO / VAL_RATIO / TEST_RATIO 划分（整数切分，余数进测试集）。."""
     n = len(items)
     if n == 0:
         raise ValueError("没有可用的图片+XML 样本。")
@@ -185,7 +185,7 @@ def _write_split(subset, split_name):
 
 
 def _write_dataset_yaml():
-    """生成 Ultralytics 可直接使用的 dataset.yaml。"""
+    """生成 Ultralytics 可直接使用的 dataset.yaml。."""
     path_pos = os.path.normpath(YOLO_OUT).replace("\\", "/")
     names_yaml = "\n".join(f"  {i}: {n}" for i, n in enumerate(classes))
     content = (
