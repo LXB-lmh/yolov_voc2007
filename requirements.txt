@@ -42,7 +42,7 @@ starlette==1.0.0
 sympy==1.14.0
 torch==2.7.1+cu118
 torchaudio==2.7.1+cu118
-torchvision==0.22.1+cu118
+torchvision==0.23.0
 typing-inspection==0.4.2
 typing_extensions==4.15.0
 ultralytics==8.4.38
